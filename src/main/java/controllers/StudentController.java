@@ -71,7 +71,20 @@ public class StudentController {
     public EntityResponse<CommonResponse<GetStudentByIdResponse>> getStudentById(IdRequest request) {
         int status = 200;
         CommonResponse<GetStudentByIdResponse> commonResponse;
-        
+        List<String> errors = idValidator.validate(request);
+        if (errors.isEmpty()) {
+            try {
+                commonResponse = new CommonResponse<>(new GetStudentByIdResponse(studentService.getStudentById(request.getId())));
+            } catch (Exception e) {
+                status = 500;
+                commonResponse = new CommonResponse<>(2, e.getMessage());
+            }
+        }
+        else {
+            commonResponse = new CommonResponse<>(1, "Validation error", errors);
+            status = 422;
+        }
+        return new EntityResponse<>(commonResponse, status);
     }
 
 

@@ -17,14 +17,14 @@ public class EditStudentRequestValidator implements IRequestValidator<EditStuden
     public List<String> validate(EditStudentRequest request) {
         List<String> errors = new ArrayList<>();
 
-        idValidator.validateId(request.getId(), errors, "studentId", "Should be positive");
-        idValidator.validateId(request.getGroupId(), errors, "groupId", "Should be positive");
-        stringValidator.validateStringNotEmpty(request.getName(), errors, "studentName", "Should be not Null and not Empty");
-        stringValidator.validateStringMaxLength(request.getName(), maxLength, errors, "studentName", "Should be less than max length");
-        stringValidator.validateStringNotEmpty(request.getSurname(), errors, "studentSurname", "Should be not Null and not Empty");
-        stringValidator.validateStringMaxLength(request.getSurname(), maxLength, errors, "studentSurname", "Should be less than max length");
-        stringValidator.validateStringNotEmpty(request.getPatronymic(), errors, "studentPatronymic", "Should be not Null and not Empty");
-        stringValidator.validateStringMaxLength(request.getPatronymic(), maxLength, errors, "studentPatronymic", "Should be less than max length");
+        idValidator.validateId(request.getStudent().getId(), errors, "studentId", "Should be positive");
+        idValidator.validateId(request.getStudent().getGroupId(), errors, "groupId", "Should be positive");
+        stringValidator.validateStringNotEmpty(request.getStudent().getName(), errors, "studentName", "Should be not Null and not Empty");
+        stringValidator.validateStringMaxLength(request.getStudent().getName(), maxLength, errors, "studentName", "Should be less than max length");
+        stringValidator.validateStringNotEmpty(request.getStudent().getSurname(), errors, "studentSurname", "Should be not Null and not Empty");
+        stringValidator.validateStringMaxLength(request.getStudent().getSurname(), maxLength, errors, "studentSurname", "Should be less than max length");
+        stringValidator.validateStringNotEmpty(request.getStudent().getPatronymic(), errors, "studentPatronymic", "Should be not Null and not Empty");
+        stringValidator.validateStringMaxLength(request.getStudent().getPatronymic(), maxLength, errors, "studentPatronymic", "Should be less than max length");
         
         return errors;
     }

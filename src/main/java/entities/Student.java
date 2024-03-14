@@ -1,16 +1,18 @@
 package entities;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import models.Statuses;
 
 import java.util.Objects;
 
 public class Student {
-    private Long id;
-    private String name;
-    private String surname;
-    private String patronymic;
-    private Statuses status;
-    private Long GroupId;
+    private final Long id;
+    private final String name;
+    private final String surname;
+    private final String patronymic;
+    private final Statuses status;
+    private final long GroupId;
 
     public Long getId() {
         return id;
@@ -32,20 +34,17 @@ public class Student {
         return status;
     }
 
-    public Long getGroupId() {
+    public long getGroupId() {
         return GroupId;
     }
 
-    public Student() {
-        this.id = null;
-        this.name = "name";
-        this.surname = "surname";
-        this.patronymic = "patronymic";
-        this.status = Statuses.UNKNOWN;
-        this.GroupId = null;
-    }
-
-    public Student(Long id, String name, String surname, String patronymic, Statuses status, Long studentsGroupId) {
+    @JsonCreator
+    public Student(@JsonProperty(value = "id")Long id,
+                   @JsonProperty(value = "name")String name,
+                   @JsonProperty(value = "surname")String surname,
+                   @JsonProperty(value = "patronymic")String patronymic,
+                   @JsonProperty(value = "status")Statuses status,
+                   @JsonProperty(value = "group")long studentsGroupId) {
         this.id = id;
         this.name = name;
         this.surname = surname;

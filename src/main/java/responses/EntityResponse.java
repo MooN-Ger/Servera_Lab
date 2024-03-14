@@ -1,8 +1,8 @@
 package responses;
 
 public class EntityResponse<T> {
-    private T body;
-    private int httpStatus;
+    private final T body;
+    private final int httpStatus;
 
     public EntityResponse(T body, int httpStatus) {
         this.body = body;

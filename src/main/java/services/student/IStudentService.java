@@ -1,7 +1,7 @@
 package services.student;
 
 import entities.Student;
-import exeptions.ServiceException;
+import exceptions.ServiceException;
 import models.Statuses;
 
 import java.util.List;

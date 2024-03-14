@@ -1,7 +1,7 @@
 package responses.student;
 
 public class AddStudentResponse {
-    private long idStudent;
+    private final long idStudent;
 
     public AddStudentResponse(long idStudent) {
         this.idStudent = idStudent;

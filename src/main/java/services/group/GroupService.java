@@ -1,13 +1,13 @@
 package services.group;
 
 import entities.Group;
-import exeptions.ServiceException;
+import exceptions.ServiceException;
 import repositories.group.GroupRepository;
 
 import java.util.List;
 
 public class GroupService implements IGroupService {
-    private GroupRepository repository;
+    private final GroupRepository repository;
     public GroupService(GroupRepository repository) {
         this.repository = repository;
     }

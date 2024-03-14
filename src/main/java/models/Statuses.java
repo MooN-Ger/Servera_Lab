@@ -1,7 +1,13 @@
 package models;
 
-public enum Statuses {
+import java.io.Serializable;
+
+public enum Statuses implements Serializable {
     ACTIVE,
     VACATION,
-    UNKNOWN
+    UNKNOWN;
+
+    public String getStatus() {
+        return this.name();
+    }
 }

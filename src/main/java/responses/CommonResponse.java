@@ -3,11 +3,11 @@ package responses;
 import java.util.List;
 
 public class CommonResponse<T> {
-    private boolean isOk;
-    private int errorCode;
-    private String errorMessage;
-    private List<String> errors;
-    private T data;
+    private final boolean isOk;
+    private final int errorCode;
+    private final String errorMessage;
+    private final List<String> errors;
+    private final T data;
 
     public CommonResponse(T data) {
         this.data = data;

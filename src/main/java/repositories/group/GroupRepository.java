@@ -1,7 +1,7 @@
 package repositories.group;
 
 import entities.Group;
-import exeptions.RepositoryException;
+import exceptions.RepositoryException;
 import repositories.DataBase;
 
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 public class GroupRepository implements IGroupRepository {
-    private DataBase db;
+    private final DataBase db;
     private long counter;
 
     public GroupRepository(DataBase db) {

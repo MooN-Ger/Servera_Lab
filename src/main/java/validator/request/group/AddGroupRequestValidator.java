@@ -11,6 +11,7 @@ public class AddGroupRequestValidator implements IRequestValidator<AddGroupReque
     private StringValidator stringValidator;
     private static final int maxLength = 100;
 
+    @Override
     public List<String> validate(AddGroupRequest request) {
         List<String> errors = new ArrayList<>();
 

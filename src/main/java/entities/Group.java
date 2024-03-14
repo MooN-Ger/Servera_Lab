@@ -1,10 +1,13 @@
 package entities;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Objects;
 
 public class Group {
-    private Long id;
-    private String name;
+    private final Long id;
+    private final String name;
 
     public Long getId() {
         return id;
@@ -19,7 +22,9 @@ public class Group {
         this.id = null;
     }
 
-    public Group(Long id, String name){
+    @JsonCreator
+    public Group(@JsonProperty(value = "id")Long id,
+                 @JsonProperty(value = "name")String name) {
         this.id = id;
         this.name = name;
     }

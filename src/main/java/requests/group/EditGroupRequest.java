@@ -1,19 +1,16 @@
 package requests.group;
 
+import entities.Group;
+
 public class EditGroupRequest {
-    private long id;
-    private String name;
+
+    private final Group group;
 
     public EditGroupRequest(long id, String name) {
-        this.id = id;
-        this.name = name;
+        this.group = new Group(id, name);
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
+    public Group getGroup() {
+        return group;
     }
 }

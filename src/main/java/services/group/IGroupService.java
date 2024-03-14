@@ -1,7 +1,7 @@
 package services.group;
 
 import entities.Group;
-import exeptions.ServiceException;
+import exceptions.ServiceException;
 
 import java.util.List;
 

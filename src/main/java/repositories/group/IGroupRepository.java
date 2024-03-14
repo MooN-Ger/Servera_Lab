@@ -1,7 +1,7 @@
 package repositories.group;
 
 import entities.Group;
-import exeptions.RepositoryException;
+import exceptions.RepositoryException;
 
 import java.util.List;
 

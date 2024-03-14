@@ -1,7 +1,7 @@
 package requests.group;
 
 public class AddGroupRequest {
-    private String name;
+    private final String name;
 
     public AddGroupRequest(String name) {
         this.name = name;

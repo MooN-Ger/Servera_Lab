@@ -1,14 +1,14 @@
 package services.student;
 
 import entities.Student;
-import exeptions.ServiceException;
+import exceptions.ServiceException;
 import models.Statuses;
 import repositories.student.StudentRepository;
 
 import java.util.List;
 
 public class StudentService implements IStudentService {
-    private StudentRepository repository;
+    private final StudentRepository repository;
     public StudentService(StudentRepository repository) {
         this.repository = repository;
     }

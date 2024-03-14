@@ -1,7 +1,7 @@
 package repositories.student;
 
 import entities.Student;
-import exeptions.RepositoryException;
+import exceptions.RepositoryException;
 import models.Statuses;
 
 import java.util.List;

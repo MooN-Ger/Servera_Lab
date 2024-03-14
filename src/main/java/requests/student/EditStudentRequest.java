@@ -4,7 +4,7 @@ import entities.Student;
 import models.Statuses;
 
 public class EditStudentRequest {
-    private Student student;
+    private final Student student;
 
     public EditStudentRequest(long id, String name, String surname, String patronymic, Statuses status, long groupId) {
         this.student = new Student(id, name, surname, patronymic, status, groupId);

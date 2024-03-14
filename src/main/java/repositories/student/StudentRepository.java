@@ -1,7 +1,7 @@
 package repositories.student;
 
 import entities.Student;
-import exeptions.RepositoryException;
+import exceptions.RepositoryException;
 import models.Statuses;
 import repositories.DataBase;
 
@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class StudentRepository implements IStudentRepository {
-    private DataBase db;
+    private final DataBase db;
     private long counter;
 
     public StudentRepository(DataBase db) {
